@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Solar System </title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+        "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+    <p>Loading Universe...</p>
+  </div>
+
+  <nav>
+    <h1>Solar Explorer</h1>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Planets</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="content">
+    <h2>Welcome to the Solar System</h2>
+    <p>
+      Journey across the stars and witness the cosmic dance of planets, moons, and rings.
+      This interactive space simulation lets you explore our solar system in stunning 3D powered by WebGL.
+    </p>
+  </div>
+
+  <script type="module" src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = 0;
+      loader.style.pointerEvents = 'none';
+      setTimeout(() => loader.remove(), 500);
+    });
+
+    gsap.from("nav", { duration: 1.2, y: -50, opacity: 0, ease: "power2.out" });
+    gsap.from(".content h2", { duration: 1, x: -100, opacity: 0, delay: 0.5, ease: "power3.out" });
+    gsap.from(".content p", { duration: 1, x: -100, opacity: 0, delay: 0.8, ease: "power3.out" });
+    gsap.from("nav ul li", { duration: 0.8, y: 20, opacity: 0, delay: 0.3, stagger: 0.2, ease: "power2.out" });
+  </script>
+</body>
+</html>
