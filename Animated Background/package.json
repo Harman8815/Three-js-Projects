@@ -1,0 +1,15 @@
+{
+  "name": "animated-background",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html --open"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "parcel-bundler": "^1.12.5",
+    "three": "^0.172.0"
+  }
+}
